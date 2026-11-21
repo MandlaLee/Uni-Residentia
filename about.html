@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About UNI RESIDENTIA - Our story, mission, and commitment to ambitious students.">
     <title>About | UNI RESIDENTIA</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/icons/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <header class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="navbar__logo">
-                <img src="images/logos/shield.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
+                <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
                 <span class="navbar__brand">UNI RESIDENTIA</span>
             </a>
             <nav class="navbar__nav" id="navMenu">
@@ -47,7 +47,7 @@
             <div class="container">
                 <div class="brand-story__grid">
                     <div class="brand-story__image">
-                        <img src="images/photos/about-story.jpg" alt="UNI RESIDENTIA common area">
+                        <img src="images/placeholders/community.svg" alt="UNI RESIDENTIA common area">
                     </div>
                     <div class="brand-story__content">
                         <h2>A Residence for the Driven.</h2>
@@ -68,22 +68,22 @@
                 </div>
                 <div class="values__grid">
                     <div class="value-card">
-                        <img src="images/icons/crown.svg" alt="" class="value-card__icon">
+                        <img src="images/icons/crown.png" alt="" class="value-card__icon">
                         <h3>Excellence</h3>
                         <p>We pursue the highest standards in everything we offer—from our facilities to our service.</p>
                     </div>
                     <div class="value-card">
-                        <img src="images/icons/book.svg" alt="" class="value-card__icon">
+                        <img src="images/icons/book.png" alt="" class="value-card__icon">
                         <h3>Growth</h3>
                         <p>We create conditions where academic and personal development flourish naturally.</p>
                     </div>
                     <div class="value-card">
-                        <img src="images/icons/key.svg" alt="" class="value-card__icon">
+                        <img src="images/icons/key.png" alt="" class="value-card__icon">
                         <h3>Access</h3>
                         <p>We open doors—literal and metaphorical—for the next generation of leaders.</p>
                     </div>
                     <div class="value-card">
-                        <img src="images/icons/wreath.svg" alt="" class="value-card__icon">
+                        <img src="images/icons/wreath.png" alt="" class="value-card__icon">
                         <h3>Community</h3>
                         <p>We build networks of ambitious peers who elevate each other.</p>
                     </div>
@@ -109,15 +109,15 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <img src="images/logos/crest.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
+                    <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
                     <p class="footer__tagline">Built for the Driven.</p>
                     <p class="footer__est">EST. MMXXV</p>
                 </div>
                 <div class="footer__links">
                     <h4>Residences</h4>
                     <a href="residence-detail.html">Pretoria</a>
-                    <a href="residence-detail.html">Johannesburg</a>
-                    <a href="contact.html">Cape Town (2028)</a>
+                    <a href="residences.html#johannesburg">Johannesburg</a>
+                    <a href="contact.html">Cape Town (planned)</a>
                 </div>
                 <div class="footer__links">
                     <h4>Quick Links</h4>
@@ -136,21 +136,24 @@
                     <p>info@uniresidentia.com</p>
                     <p>+27 12 345 6789</p>
                     <div class="footer__social">
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">Instagram</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">LinkedIn</a>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
+                <p>&copy; 2026 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.87.3"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
