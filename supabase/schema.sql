@@ -1,4 +1,4 @@
--- Only run in a dedicated UNI RESIDENTIA Supabase project. Review before deployment.
+-- UNI RESIDENTIA schema installed on repurposed project cinpqzwltwmuzqjpazju. Review before reapplying.
 create table if not exists public.applications(
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
