@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore UNI RESIDENTIA's premium student residences in Pretoria, Johannesburg, and Cape Town.">
     <title>Residences &amp; Rooms | UNI RESIDENTIA</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/icons/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <header class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="navbar__logo">
-                <img src="images/logos/shield.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
+                <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
                 <span class="navbar__brand">UNI RESIDENTIA</span>
             </a>
             <nav class="navbar__nav" id="navMenu">
@@ -47,7 +47,7 @@
                 <div class="residences-listing__grid">
                     <article class="residence-detail-card">
                         <div class="residence-detail-card__gallery">
-                            <img src="images/photos/residence-1.jpg" alt="Pretoria Residence exterior">
+                            <img src="images/placeholders/property.svg" alt="Pretoria Residence exterior">
                         </div>
                         <div class="residence-detail-card__content">
                             <span class="residence-detail-card__badge">Now Open</span>
@@ -73,8 +73,8 @@
                     </article>
 
                     <article class="residence-detail-card">
-                        <div class="residence-detail-card__gallery">
-                            <img src="images/photos/residence-2.jpg" alt="Johannesburg Residence exterior">
+                        <div id="johannesburg" class="residence-detail-card__gallery">
+                            <img src="images/placeholders/property.svg" alt="Johannesburg Residence exterior">
                         </div>
                         <div class="residence-detail-card__content">
                             <span class="residence-detail-card__badge">Now Open</span>
@@ -95,16 +95,16 @@
                                     <span class="residence-stat__label">Security</span>
                                 </div>
                             </div>
-                            <a href="residence-detail.html" class="btn btn--burgundy">Explore Residence</a>
+                            <a href="#johannesburg" class="btn btn--burgundy">View Details</a>
                         </div>
                     </article>
 
                     <article class="residence-detail-card residence-detail-card--coming">
                         <div class="residence-detail-card__gallery">
-                            <img src="images/photos/residence-3.jpg" alt="Cape Town Residence concept">
+                            <img src="images/placeholders/property.svg" alt="Cape Town Residence concept">
                         </div>
                         <div class="residence-detail-card__content">
-                            <span class="residence-detail-card__badge residence-detail-card__badge--coming">Coming 2028</span>
+                            <span class="residence-detail-card__badge residence-detail-card__badge--coming">Future concept</span>
                             <h2>Cape Town Residence</h2>
                             <p class="residence-detail-card__address">Rondebosch, Cape Town</p>
                             <p class="residence-detail-card__description">Our first coastal residence is in development. Located near the University of Cape Town, this residence will bring the UNI RESIDENTIA standard to the Mother City. Register your interest to be the first to know when applications open.</p>
@@ -130,14 +130,14 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <img src="images/logos/crest.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
+                    <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
                     <p class="footer__tagline">Built for the Driven.</p>
                     <p class="footer__est">EST. MMXXV</p>
                 </div>
                 <div class="footer__links">
                     <h4>Residences</h4>
                     <a href="residence-detail.html">Pretoria</a>
-                    <a href="residence-detail.html">Johannesburg</a>
+                    <a href="residences.html#johannesburg">Johannesburg</a>
                     <a href="contact.html">Cape Town (2028)</a>
                 </div>
                 <div class="footer__links">
@@ -157,21 +157,24 @@
                     <p>info@uniresidentia.com</p>
                     <p>+27 12 345 6789</p>
                     <div class="footer__social">
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">Instagram</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">LinkedIn</a>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
                 <p>&copy; 2025 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.87.3"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

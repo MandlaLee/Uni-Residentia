@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The UNI RESIDENTIA experience - amenities, community, and lifestyle designed for ambitious students.">
     <title>The Experience | UNI RESIDENTIA</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/icons/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <header class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="navbar__logo">
-                <img src="images/logos/shield.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
+                <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Shield" class="navbar__shield">
                 <span class="navbar__brand">UNI RESIDENTIA</span>
             </a>
             <nav class="navbar__nav" id="navMenu">
@@ -46,42 +46,42 @@
             <div class="container">
                 <div class="amenities__grid">
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-study.jpg" alt="Study Lounge">
+                        <img src="images/placeholders/community.svg" alt="Study Lounge">
                         <div class="amenity-card__content">
                             <h3>Study Lounge</h3>
                             <p>A library-calibre space for deep, uninterrupted focus. Ergonomic seating, acoustic treatment, and abundant natural light create the ideal conditions for academic work.</p>
                         </div>
                     </div>
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-gym.jpg" alt="Gym">
+                        <img src="images/placeholders/community.svg" alt="Gym">
                         <div class="amenity-card__content">
                             <h3>Fitness Studio</h3>
                             <p>Maintain your physical wellbeing with our fully equipped gym. Cardio machines, free weights, and dedicated stretching space—available exclusively to residents.</p>
                         </div>
                     </div>
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-lounge.jpg" alt="Social Lounge">
+                        <img src="images/placeholders/community.svg" alt="Social Lounge">
                         <div class="amenity-card__content">
                             <h3>Social Lounge</h3>
                             <p>Where community happens. Comfortable seating, a kitchenette, and a calendar of curated events make this the heart of the residence.</p>
                         </div>
                     </div>
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-security.jpg" alt="Security">
+                        <img src="images/placeholders/community.svg" alt="Security">
                         <div class="amenity-card__content">
                             <h3>24/7 Security</h3>
                             <p>Biometric access, CCTV monitoring, and on-site security personnel. Your safety is never compromised, so you can focus on what matters.</p>
                         </div>
                     </div>
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-laundry.jpg" alt="Laundry">
+                        <img src="images/placeholders/community.svg" alt="Laundry">
                         <div class="amenity-card__content">
                             <h3>Laundry</h3>
                             <p>Modern, app-connected washing machines and dryers. No coins, no queues—just clean clothes when you need them.</p>
                         </div>
                     </div>
                     <div class="amenity-card">
-                        <img src="images/photos/amenity-gaming.jpg" alt="Gaming Area">
+                        <img src="images/placeholders/community.svg" alt="Gaming Area">
                         <div class="amenity-card__content">
                             <h3>Recreation Zone</h3>
                             <p>Gaming consoles, board games, and a large screen for movie nights. Because balance matters. The driven know when to switch off.</p>
@@ -120,14 +120,14 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <img src="images/logos/crest.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
+                    <img src="images/icons/logo.svg" alt="UNI RESIDENTIA Crest" class="footer__crest">
                     <p class="footer__tagline">Built for the Driven.</p>
                     <p class="footer__est">EST. MMXXV</p>
                 </div>
                 <div class="footer__links">
                     <h4>Residences</h4>
                     <a href="residence-detail.html">Pretoria</a>
-                    <a href="residence-detail.html">Johannesburg</a>
+                    <a href="residences.html#johannesburg">Johannesburg</a>
                     <a href="contact.html">Cape Town (2028)</a>
                 </div>
                 <div class="footer__links">
@@ -147,21 +147,24 @@
                     <p>info@uniresidentia.com</p>
                     <p>+27 12 345 6789</p>
                     <div class="footer__social">
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">Instagram</a>
+                        <a href="contact.html" aria-label="Contact UNI RESIDENTIA">LinkedIn</a>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
                 <p>&copy; 2025 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.87.3"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
