@@ -308,9 +308,6 @@ body{background:var(--ur-cream);color:var(--ur-ink);overflow-x:hidden}
 .ur-showcase__icons span{display:inline-flex;padding:.45rem .75rem;color:#721d23;font-size:.7rem;font-weight:700;background:#f1e7d7;border:1px solid #dfcba8;border-radius:30px;white-space:nowrap}
 .ur-showcase__link{display:inline-flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:700;font-size:.85rem;color:#6d0f19;border-bottom:2px solid #b58d51;padding-bottom:.25rem}
 .ur-showcase__link:hover{color:#aa702a}
-.ur-showcase__bottom{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:-1rem;font:.72rem var(--font-sans);color:#8b6c4d;letter-spacing:.09em;text-transform:uppercase}
-.ur-showcase__progress{width:160px;height:3px;background:#e6d6bd;overflow:hidden}
-.ur-showcase__progress span{height:100%;background:#8b2530;display:block;width:14.286%;transition:width .25s ease}
 .ur-included{background:#3d080f;color:#fff8ed;padding:clamp(4.2rem,7vw,7rem) 0;overflow:hidden}
 .ur-included:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 25%,rgba(142,47,56,.4),transparent 45%),radial-gradient(circle at 100% 100%,rgba(118,23,33,.55),transparent 50%);pointer-events:none}
 .ur-included__ribbon{position:absolute;right:-100px;top:-25px;width:min(47vw,600px);z-index:0;opacity:.56}
@@ -367,7 +364,6 @@ body{background:var(--ur-cream);color:var(--ur-ink);overflow-x:hidden}
  .ur-showcase__image--bottom{right:9%;bottom:5%}
  .ur-showcase__copy{width:100%;max-width:560px;padding:.4rem 0 2rem}
  .ur-showcase__copy h3{font-size:clamp(3.6rem,12vw,5.4rem)}
- .ur-showcase__bottom{margin:0}
  .ur-included__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}
  .ur-included__ribbon{width:80vw;opacity:.27}
  .ur-viewing{min-height:420px}
@@ -378,8 +374,6 @@ body{background:var(--ur-cream);color:var(--ur-ink);overflow-x:hidden}
  .ur-showcase__copy h3{font-size:clamp(3.4rem,13vw,4.3rem)}
  .ur-showcase__description{font-size:.93rem}
  .ur-showcase__icons span{font-size:.64rem}
- .ur-showcase__bottom{font-size:.63rem}
- .ur-showcase__progress{width:78px}
  .ur-included__grid{grid-template-columns:1fr;row-gap:1.5rem}
  .ur-included__item{gap:.9rem}
  .ur-included__header{margin-bottom:2.2rem}
@@ -391,5 +385,5 @@ body{background:var(--ur-cream);color:var(--ur-ink);overflow-x:hidden}
  .ur-viewing:after{inset:9px}
 }
 @media(prefers-reduced-motion:reduce){
- .ur-showcase__image,.ur-showcase__progress span,.ur-viewing__button{transition:none}
+ .ur-showcase__image,.ur-viewing__button{transition:none}
 }

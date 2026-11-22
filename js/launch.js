@@ -151,8 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const eyebrow = root.querySelector("[data-ur-eyebrow]");
   const tagline = root.querySelector("[data-ur-tagline]");
   const description = root.querySelector("[data-ur-description]");
-  const count = root.querySelector("[data-ur-count]");
-  const progress = root.querySelector("[data-ur-progress]");
   const visual = root.querySelector("[data-ur-visual]");
   const panel = root.querySelector('[role="tabpanel"]');
   const link = root.querySelector(".ur-showcase__link");
@@ -160,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = ["main", "top", "bottom"].map(position => root.querySelector('[data-ur-image="' + position + '"]'));
   if (tabs.length !== slides.length || images.some(item => !item)) return;
   let active = 0, isVisible = false, timer = null, updateTimer = null;
-  let pausedByUser = false;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const preload = Array.from(new Set(slides.flatMap(s => s.images)));
   preload.forEach(name => {const image = new Image();image.src = "images/rooms/" + name + ".webp";});
@@ -175,8 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tab.tabIndex = selected ? 0 : -1;
     });
     panel.setAttribute("aria-labelledby", tabs[index].id);
-    count.textContent = String(index + 1).padStart(2,"0") + " / " + String(slides.length).padStart(2,"0");
-    progress.style.width = ((index + 1) / slides.length * 100) + "%";
     if (focus) tabs[index].focus({preventScroll:true});
     if (updateTimer) clearTimeout(updateTimer);
     if (!reduceMotion) visual.classList.add("is-switching");
@@ -197,29 +192,23 @@ document.addEventListener("DOMContentLoaded", () => {
     else updateTimer = setTimeout(write, 140);
   }
   tabs.forEach((tab,i) => {
-    tab.addEventListener("click", () => {activate(i);pausedByUser=true;restart();});
+    tab.addEventListener("click", () => {activate(i);restart();});
     tab.addEventListener("keydown", event => {
       let next;
       if (event.key === "ArrowRight") next = i + 1;
       else if (event.key === "ArrowLeft") next = i - 1;
       else if (event.key === "Home") next = 0;
       else if (event.key === "End") next = slides.length - 1;
-      if (next !== undefined) {event.preventDefault();activate(next,true);pausedByUser=true;restart();}
+      if (next !== undefined) {event.preventDefault();activate(next,true);restart();}
     });
   });
   function restart() {
     if (timer) clearInterval(timer);
     if (reduceMotion) return;
     timer = setInterval(() => {
-      if (isVisible && !pausedByUser && !document.hidden) activate(active + 1);
-    }, 8500);
+      if (isVisible && !document.hidden) activate(active + 1);
+    }, 4000);
   }
-  root.addEventListener("mouseenter", () => {pausedByUser=true;});
-  root.addEventListener("mouseleave", () => {pausedByUser=false;});
-  root.addEventListener("focusin", () => {pausedByUser=true;});
-  root.addEventListener("focusout", event => {
-    if (!root.contains(event.relatedTarget)) pausedByUser=false;
-  });
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(entries => {isVisible=entries[0]?.isIntersecting ?? false;}, {threshold:.15});
     observer.observe(root);
