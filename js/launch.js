@@ -117,3 +117,112 @@ document.addEventListener("DOMContentLoaded", () => {
     finally{btn.disabled=false;}
   });
 });
+
+
+/* Uni Residentia: in-place photo and content switcher (no sliding panels) */
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.querySelector("[data-ur-showcase]");
+  if (!root) return;
+  const slides = [
+    { key:"private", eyebrow:"YOUR OWN SPACE", heading:"Private Bedroom", tagline:"A calm place to recharge",
+      description:"Discover private-bedroom options with comfortable furnishings and space to study, rest and make your room feel like home.",
+      images:["single-bedroom","study-room","living-room"], tags:["Private space","Study ready","Everyday comfort"], link:"investment.html" },
+    { key:"social", eyebrow:"MAKE ROOM FOR FRIENDS", heading:"Social Spaces", tagline:"Life together",
+      description:"Relax after lectures, catch up with friends and enjoy shared moments in welcoming lounges and social areas.",
+      images:["living-room","dining-room","courtyard"], tags:["Shared lounge","Relax & unwind","Make connections"], link:"experience.html" },
+    { key:"study", eyebrow:"SPACE TO FOCUS", heading:"Study Spaces", tagline:"Make every hour count",
+      description:"Settle into a study-friendly space for coursework, exam preparation and the quiet time your goals deserve.",
+      images:["study-room","single-bedroom","reception"], tags:["Focus time","Study areas","Daily routines"], link:"experience.html" },
+    { key:"sharing", eyebrow:"YOUR PEOPLE, YOUR PLACE", heading:"Sharing Rooms", tagline:"Better together",
+      description:"Sharing rooms offer a practical student-living option with a place for your essentials and a study routine of your own.",
+      images:["sharing-bedroom","dining-room","living-room"], tags:["Shared rooms","Student living","Practical comfort"], link:"investment.html" },
+    { key:"gym", eyebrow:"FIND YOUR BALANCE", heading:"Gym & Fitness", tagline:"Move your way",
+      description:"Give yourself a break from the books and discover fitness and recreation spaces within our accommodation experience.",
+      images:["fitness-room","courtyard","gaming-room"], tags:["Keep active","Recharge","Room to move"], link:"experience.html" },
+    { key:"community", eyebrow:"LIVE THE MOMENTS", heading:"Community & Events", tagline:"Belong here",
+      description:"Great student memories happen outside the lecture hall. Find common areas where everyday conversations can become friendships.",
+      images:["courtyard","gaming-room","dining-room"], tags:["Community spaces","Downtime","New friendships"], link:"experience.html" },
+    { key:"team", eyebrow:"STUDENT SUPPORT", heading:"On-Site Team", tagline:"Here to help",
+      description:"Need guidance about your room, shared facilities or day-to-day arrangements? Our team is your starting point for assistance.",
+      images:["reception","gate-entrance","corridor"], tags:["Ask questions","Resident support","Get in touch"], link:"contact.html" },
+  ];
+  const tabs = Array.from(root.querySelectorAll('[role="tab"][data-ur-slide]'));
+  const heading = root.querySelector("[data-ur-heading]");
+  const eyebrow = root.querySelector("[data-ur-eyebrow]");
+  const tagline = root.querySelector("[data-ur-tagline]");
+  const description = root.querySelector("[data-ur-description]");
+  const count = root.querySelector("[data-ur-count]");
+  const progress = root.querySelector("[data-ur-progress]");
+  const visual = root.querySelector("[data-ur-visual]");
+  const panel = root.querySelector('[role="tabpanel"]');
+  const link = root.querySelector(".ur-showcase__link");
+  const tagNodes = Array.from(root.querySelectorAll(".ur-showcase__icons span"));
+  const images = ["main", "top", "bottom"].map(position => root.querySelector('[data-ur-image="' + position + '"]'));
+  if (tabs.length !== slides.length || images.some(item => !item)) return;
+  let active = 0, isVisible = false, timer = null, updateTimer = null;
+  let pausedByUser = false;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const preload = Array.from(new Set(slides.flatMap(s => s.images)));
+  preload.forEach(name => {const image = new Image();image.src = "images/rooms/" + name + ".webp";});
+  function activate(next, focus = false) {
+    const index = ((next % slides.length) + slides.length) % slides.length;
+    const slide = slides[index];
+    active = index;
+    tabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.classList.toggle("is-active", selected);
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    panel.setAttribute("aria-labelledby", tabs[index].id);
+    count.textContent = String(index + 1).padStart(2,"0") + " / " + String(slides.length).padStart(2,"0");
+    progress.style.width = ((index + 1) / slides.length * 100) + "%";
+    if (focus) tabs[index].focus({preventScroll:true});
+    if (updateTimer) clearTimeout(updateTimer);
+    if (!reduceMotion) visual.classList.add("is-switching");
+    const write = () => {
+      heading.textContent = slide.heading;
+      eyebrow.textContent = slide.eyebrow;
+      tagline.textContent = slide.tagline;
+      description.textContent = slide.description;
+      link.href = slide.link;
+      tagNodes.forEach((node,i) => {if (slide.tags[i]) node.textContent = slide.tags[i];});
+      images.forEach((element,i) => {
+        element.src = "images/rooms/" + slide.images[i] + ".webp";
+        element.alt = slide.heading + " — " + (i === 0 ? "main room image" : i === 1 ? "additional student space" : "shared student facility");
+      });
+      visual.classList.remove("is-switching");
+    };
+    if (reduceMotion) write();
+    else updateTimer = setTimeout(write, 140);
+  }
+  tabs.forEach((tab,i) => {
+    tab.addEventListener("click", () => {activate(i);pausedByUser=true;restart();});
+    tab.addEventListener("keydown", event => {
+      let next;
+      if (event.key === "ArrowRight") next = i + 1;
+      else if (event.key === "ArrowLeft") next = i - 1;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = slides.length - 1;
+      if (next !== undefined) {event.preventDefault();activate(next,true);pausedByUser=true;restart();}
+    });
+  });
+  function restart() {
+    if (timer) clearInterval(timer);
+    if (reduceMotion) return;
+    timer = setInterval(() => {
+      if (isVisible && !pausedByUser && !document.hidden) activate(active + 1);
+    }, 8500);
+  }
+  root.addEventListener("mouseenter", () => {pausedByUser=true;});
+  root.addEventListener("mouseleave", () => {pausedByUser=false;});
+  root.addEventListener("focusin", () => {pausedByUser=true;});
+  root.addEventListener("focusout", event => {
+    if (!root.contains(event.relatedTarget)) pausedByUser=false;
+  });
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {isVisible=entries[0]?.isIntersecting ?? false;}, {threshold:.15});
+    observer.observe(root);
+  } else isVisible=true;
+  restart();
+});
