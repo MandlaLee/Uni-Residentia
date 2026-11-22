@@ -2,7 +2,6 @@
 const UR_API = "https://cinpqzwltwmuzqjpazju.supabase.co";
 const UR_KEY = "sb_publishable_2QJbiuQOSsrayG7LdpFsPg_hQbhN9A3";
 const $ = (sel, root=document) => root.querySelector(sel);
-const pretty = v => ({willows:"Willows House",universitas:"Universitas House",either:"Any residence",single:"Single Room",sharing:"Sharing Room"}[v] || v || "—");
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = $("#navbar");
   const nav = $("#navMenu"), toggle = $("#mobileToggle");
@@ -78,54 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }catch(error){setStatus(state,error?.message||"Couldn't send your message. Please try again.");}
     finally{btn.disabled=false;}
   });
-  if($("#portalLoginForm"))setupPortal(setStatus);
 });
-async function setupPortal(setStatus) {
-  const state=$("#portalStatus"),login=$("#portalLoginForm"),loginPanel=$("#portalSignIn"),dashboard=$("#portalDashboard"),out=$("#portalSignOut"),data=$("#portalApplications");
-  let client;
-  try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.8/+esm");
-    client=createClient(UR_API,UR_KEY,{auth:{persistSession:true,detectSessionInUrl:true,autoRefreshToken:true}});
-  }catch{
-    setStatus(state,"The sign-in service could not load. Check your connection and retry.");return;
-  }
-  const render=async()=>{
-    try{
-      const {data:session,error}=await client.auth.getSession();
-      if(error)throw error;
-      const user=session.session?.user;
-      loginPanel.hidden=!!user;dashboard.hidden=!user;
-      if(!user){data.replaceChildren();return;}
-      $("#portalEmail").textContent=user.email||"Your account";
-      setStatus(state,"Retrieving your applications…");
-      const r=await client.from("ur_applications").select("created_at,residence,room_type,academic_year,status").order("created_at",{ascending:false});
-      if(r.error)throw r.error;
-      data.replaceChildren();
-      if(!r.data?.length){
-        const p=document.createElement("p");p.textContent="No applications are linked to this email yet. If you recently applied with a different email, please contact our team.";data.appendChild(p);
-      }else{
-        r.data.forEach(row=>{
-          const box=document.createElement("div");box.className="ur-app-row";
-          const title=document.createElement("strong");title.textContent=pretty(row.residence)+" · "+pretty(row.room_type);
-          const detail=document.createElement("small");detail.textContent="Academic year "+row.academic_year+" · Status: "+row.status+" · Submitted "+new Date(row.created_at).toLocaleDateString("en-ZA");
-          box.append(title,detail);data.appendChild(box);
-        });
-      }
-      setStatus(state,"");
-    }catch(err){setStatus(state,err?.message||"Unable to load your applications.");}
-  };
-  login.addEventListener("submit",async e=>{
-    e.preventDefault();if(!login.reportValidity())return;
-    const btn=$('button[type="submit"]',login),email=String(new FormData(login).get("email")||"").trim();
-    btn.disabled=true;setStatus(state,"Sending sign-in link…");
-    try{
-      const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.origin+window.location.pathname,shouldCreateUser:true}});
-      if(error)throw error;
-      setStatus(state,"Check your email for your sign-in link. Open it to view your applications.",true);
-    }catch(err){setStatus(state,err?.message||"We couldn't send a link. Please try again.");}
-    finally{btn.disabled=false;}
-  });
-  if(out)out.addEventListener("click",async()=>{await client.auth.signOut();setStatus(state,"Signed out.",true);await render();});
-  client.auth.onAuthStateChange((_event,_session)=>{setTimeout(()=>render(),0);});
-  await render();
-}
