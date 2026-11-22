@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if(navbar) navbar.classList.add("navbar--scrolled");
   const params = new URLSearchParams(window.location.search);
   const residence = $("#residence"), room = $("#roomType");
-  if(residence && ["willows","universitas","either"].includes(params.get("residence"))) residence.value=params.get("residence");
+  if(residence && ["willows","universitas","brandwag","wesdene","either"].includes(params.get("residence"))) residence.value=params.get("residence");
   if(room && ["single","sharing","either"].includes(params.get("room"))) room.value=params.get("room");
   const setStatus = (node,msg,success=false) => {
     if(!node)return;
@@ -63,12 +63,51 @@ document.addEventListener("DOMContentLoaded", () => {
       setStatus(state,error?.message || "Couldn't submit your application. Please retry.");
     }finally{btn.disabled=false;}
   });
+  // Accessible dropdown navigation: desktop and mobile.
+  const groups=[...document.querySelectorAll("[data-ur-dropdown]")];
+  const dismissDropdowns=(except=null)=>groups.forEach(group=>{
+    if(group===except)return;
+    group.classList.remove("is-open");
+    const button=group.querySelector("[data-ur-toggle]");
+    if(button)button.setAttribute("aria-expanded","false");
+  });
+  groups.forEach(group=>{
+    const btn=group.querySelector("[data-ur-toggle]");
+    if(!btn)return;
+    btn.addEventListener("click",e=>{
+      e.stopPropagation();
+      const shouldOpen=!group.classList.contains("is-open");
+      dismissDropdowns();group.classList.toggle("is-open",shouldOpen);
+      btn.setAttribute("aria-expanded",String(shouldOpen));
+    });
+  });
+  document.addEventListener("click",e=>{if(!e.target.closest("[data-ur-dropdown]"))dismissDropdowns();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")dismissDropdowns();});
   const contact=$("#contactForm");
+  if(contact){
+    const topic=params.get("topic");
+    const selector=contact.querySelector('[name="subject"]');
+    if(topic&&selector&&[...selector.options].some(opt=>opt.value===topic)){
+      selector.value=topic;
+      const message=contact.querySelector('[name="message"]');
+      const examples={
+        "WhatsApp group invite":"Please send me an invitation to the Uni Residentia WhatsApp group.",
+        "WhatsApp direct chat":"Please message me directly on WhatsApp about accommodation.",
+        "Call back request":"Please call me about Uni Residentia accommodation.",
+        "Office visit":"Please share office directions and how to arrange a visit.",
+        "Email enquiry":"I would like information about Uni Residentia accommodation."
+      };
+      if(message&&examples[topic]&&!message.value)message.value=examples[topic];
+    }
+  }
   if(contact)contact.addEventListener("submit",async e=>{
     e.preventDefault();if(!contact.reportValidity())return;
     const f=new FormData(contact),btn=$('button[type="submit"]',contact),state=$("#contactStatus");
     if((f.get("website")||"").trim())return;
-    const payload={name:String(f.get("name")||"").trim(),email:String(f.get("email")||"").trim().toLowerCase(),subject:String(f.get("subject")||""),message:String(f.get("message")||"").trim()};
+    const payload={name:String(f.get("name")||"").trim(),email:String(f.get("email")||"").trim().toLowerCase(),phone:String(f.get("phone")||"").trim()||null,subject:String(f.get("subject")||""),message:String(f.get("message")||"").trim()};
+    if(["WhatsApp group invite","WhatsApp direct chat","Call back request"].includes(payload.subject)&&!payload.phone){
+      setStatus($("#contactStatus"),"Please enter your phone or WhatsApp number so we can contact you.");contact.querySelector('[name="phone"]').focus();return;
+    }
     btn.disabled=true;setStatus(state,"Sending your message…");
     try{
       await submitRecord("ur_messages",payload);

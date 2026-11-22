@@ -32,3 +32,11 @@ Run `python3 -m http.server 8000` in the repository folder and open `http://loca
 Burgundy, heritage gold, ivory, the Uni Residentia heraldic crest, Cormorant Garamond, and Montserrat. Gallery imagery is illustrative, and room finishes may vary.
 
 **Proprietary.** © 2026 UNI RESIDENTIA.
+
+## Public sitemap (November 2026)
+The primary navigation is **Home → WhatsApp → Locations → Contact → Apply**.
+Locations: Willows, Universitas, Brandwag, Wesdene (all Bloemfontein); each has a separate page with single and sharing room options.
+Contact includes phone/callback request, email enquiry, office visit request, WhatsApp and About.
+The public applications form uses the existing Supabase \`ur_applications\` table with all four residence codes.
+WhatsApp group invitations and direct chats use the existing contact intake until the business supplies the official group invitation URL and telephone number. Do not invent numbers.
+The separate admin/resident application must authenticate admins and use restricted permissions to access the same database. It is not part of the public site.
