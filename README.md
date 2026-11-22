@@ -38,5 +38,5 @@ The primary navigation is **Home → WhatsApp → Locations → Contact → Appl
 Locations: Willows, Universitas, Brandwag, Wesdene (all Bloemfontein); each has a separate page with single and sharing room options.
 Contact includes phone/callback request, email enquiry, office visit request, WhatsApp and About.
 The public applications form uses the existing Supabase \`ur_applications\` table with all four residence codes.
-WhatsApp group invitations and direct chats use the existing contact intake until the business supplies the official group invitation URL and telephone number. Do not invent numbers.
+Official WhatsApp and phone contact: 065 852 4272, international +27 65 852 4272. Direct chat: https://wa.me/27658524272. Group invite link supplied by the owner is used directly on WhatsApp page. Public enquiries remain available via the contact form.
 The separate admin/resident application must authenticate admins and use restricted permissions to access the same database. It is not part of the public site.
