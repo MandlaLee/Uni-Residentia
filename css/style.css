@@ -1917,3 +1917,73 @@ p { margin-bottom: 1rem; }
         background: linear-gradient(180deg, rgba(27, 0, 6, .08), rgba(27, 0, 6, .12));
     }
 }
+
+
+/* Uni Residentia | Bloemfontein concept experience — bespoke editorial design */
+.ur-stage,.ur-essentials,.ur-next,.ur-residences-intro,.ur-residences-grid,.ur-concept-disclosure{box-sizing:border-box}
+.ur-stage{position:relative;background:#fcfaf5;color:#30241c;padding:clamp(8rem,12vw,11rem) 0 clamp(4rem,7vw,7rem);overflow:hidden}
+.ur-stage:before{content:"";pointer-events:none;position:absolute;inset:0 52% 0 0;background-image:linear-gradient(rgba(179,138,84,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(179,138,84,.13) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(90deg,#000 25%,transparent)}
+.ur-stage__layout{position:relative;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.ur-stage__art{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center}
+.ur-stage__roundel{width:min(100%,510px);aspect-ratio:1/1;overflow:hidden;border:12px solid #f2e5d0;outline:2px solid #ba9155;border-radius:46% 54% 53% 47% / 51% 45% 55% 49%;background:radial-gradient(circle at 43% 28%,#fff9ef,#e7d4b3 72%,#d2bc91);box-shadow:28px 28px 0 -16px rgba(110,12,8,.16),0 25px 60px rgba(60,25,17,.12)}
+.ur-stage__roundel svg{width:100%;height:100%;display:block;padding:1.2rem}
+.ur-stage__mini{position:absolute;bottom:1rem;left:0;display:flex;flex-direction:column;padding:1rem 1.6rem;background:#6f0c08;color:#fffaf1;border-left:4px solid #c7a065;transform:rotate(-2deg);letter-spacing:.12em;font-size:.7rem}
+.ur-stage__mini strong{font-size:.9rem;font-weight:650;letter-spacing:.10em}
+.ur-stage__stamp{position:absolute;top:0;right:1%;width:92px;height:92px;border-radius:50%;display:grid;place-content:center;line-height:1.1;text-align:center;border:1px solid #9b763e;color:#7b0f10;font-family:var(--font-serif);font-size:2rem;background:#fff8ed;transform:rotate(13deg)}
+.ur-stage__stamp span{display:block;font:600 .55rem var(--font-sans);letter-spacing:.15em}
+.ur-eyebrow{font-size:.75rem;letter-spacing:.19em;text-transform:uppercase;color:#90662d;font-weight:700;margin-bottom:1.2rem}
+.ur-eyebrow--gold{color:#d4b16b}
+.ur-stage h1,.ur-essentials h2,.ur-next h2,.ur-residences-intro h1{font-family:var(--font-serif);font-weight:700;line-height:.98;letter-spacing:-.025em}
+.ur-stage h1{font-size:clamp(3.1rem,5vw,5.4rem);color:#6f0c08;margin:0 0 1.8rem}
+.ur-stage h1 em,.ur-essentials h2 em,.ur-next h2 em,.ur-residences-intro h1 em{font-weight:600}
+.ur-stage__copy>p:not(.ur-eyebrow):not(.ur-stage__disclaimer){max-width:38rem;font-size:1rem;line-height:1.85;color:#61564c;margin:0 0 1rem}
+.ur-stage__copy .ur-stage__lead{font-size:1.2rem!important;color:#3a2c21!important}
+.ur-stage__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0}
+.ur-stage__tags span{padding:.58rem .9rem;border:1px solid rgba(111,12,8,.28);border-radius:30px;font-size:.69rem;font-weight:650;color:#6f0c08;letter-spacing:.06em;text-transform:uppercase}
+.ur-text-link{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;color:#7b0f10;text-decoration:none;border-bottom:2px solid #b38a54;padding:.35rem 0}
+.ur-text-link:hover,.ur-text-link:focus-visible{color:#a16d28}
+.ur-stage__disclaimer{font-size:.78rem;color:#7a6b5d;margin:1.4rem 0 0;line-height:1.6}
+.ur-essentials{position:relative;padding:clamp(4.5rem,8vw,8rem) 0;background:#2d090e;color:#fff7e8;overflow:hidden}
+.ur-essentials>.container{position:relative;z-index:1}
+.ur-essentials__top{display:grid;grid-template-columns:1.05fr .75fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.ur-essentials h2{font-size:clamp(3rem,5vw,5.4rem);color:#fff8ed;margin:0}
+.ur-essentials h2 em{color:#d6b36b}
+.ur-essentials__top>p{font-size:.96rem;line-height:1.8;color:#dccac0;margin:0;max-width:420px}
+.ur-essentials__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(215,175,104,.35);border-left:1px solid rgba(215,175,104,.35)}
+.ur-essentials__item{min-width:0;display:flex;align-items:flex-start;gap:.9rem;padding:2rem 1.2rem;border-right:1px solid rgba(215,175,104,.35);border-bottom:1px solid rgba(215,175,104,.35);background:rgba(255,255,255,.018)}
+.ur-essentials__index{width:37px;min-width:37px;height:37px;display:grid;place-items:center;border:1px solid #b38a54;border-radius:50%;font:.73rem var(--font-sans);font-weight:700;color:#f0ce8f}
+.ur-essentials__item h3{color:#fff5dd;font:700 1rem var(--font-sans);margin:0 0 .45rem}
+.ur-essentials__item p{font-size:.79rem;line-height:1.65;color:#d7bebe;margin:0}
+.ur-essentials__note{margin:1.4rem 0 0;font-size:.8rem;color:#dfcaa5}
+.ur-essentials__flourish{position:absolute;width:min(42vw,420px);height:auto;right:-5%;top:-5%;pointer-events:none}
+.ur-next{position:relative;background:#3b0a0d url('../images/backgrounds/royal-cloth-pillar-extended.webp') center 56% / cover no-repeat;color:#fffaf2;text-align:center;padding:clamp(5rem,10vw,9rem) 0}
+.ur-next:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,3,7,.80),rgba(44,4,10,.82) 45%,rgba(34,3,7,.76))}
+.ur-next__content{position:relative;z-index:1;max-width:900px}
+.ur-next h2{font-size:clamp(3.1rem,5.4vw,5.9rem);margin:0 0 1.5rem;color:#fff8eb}
+.ur-next h2 em{color:#e2bc79}
+.ur-next__content>p:not(.ur-eyebrow){max-width:660px;margin:0 auto 1.6rem;font-size:1.02rem;line-height:1.85;color:#f5e8d5}
+.ur-next__button{display:inline-flex;align-items:center;gap:1.3rem;border-radius:2px;background:#e0b96a;color:#32140c;padding:1.1rem 1.8rem;font:700 .87rem var(--font-sans);text-decoration:none;transition:transform .2s,background .2s}
+.ur-next__button:hover,.ur-next__button:focus-visible{transform:translateY(-2px);background:#f3d38d;color:#32140c}
+.ur-next__content .ur-next__small{font-size:.77rem;margin:1.4rem auto 0;color:#e6cfb4}
+.ur-residences-intro{text-align:center;background:linear-gradient(135deg,#29070a,#6f0c08);color:#fff7ea;padding:clamp(9rem,13vw,12rem) 0 clamp(4rem,7vw,7rem)}
+.ur-residences-intro h1{font-size:clamp(3.2rem,6vw,6rem);color:#fff7ea;margin:0 0 1.4rem}
+.ur-residences-intro h1 em{color:#dfb570}
+.ur-residences-intro p:last-child{max-width:710px;margin:0 auto;color:#e9d4c7;line-height:1.85}
+.ur-residences-grid{background:#fcfaf5}
+.ur-residences-grid__layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
+.ur-concept-card{background:white;border:1px solid #e1d4c3;box-shadow:0 14px 35px rgba(48,25,10,.06);min-width:0}
+.ur-concept-card__art{height:310px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 40% 40%,#fffaef,#e4d3b6)}
+.ur-concept-card__art--universitas{background:radial-gradient(circle at 40% 40%,#fff8e9,#e6dcc8)}
+.ur-concept-card__art svg{width:min(95%,490px);height:100%}
+.ur-concept-card__art span{position:absolute;bottom:1.2rem;left:1.5rem;font-size:.75rem;font-weight:750;letter-spacing:.12em;color:#7b0f10}
+.ur-concept-card__body{padding:2.2rem}
+.ur-concept-card__body h2{font:700 clamp(2.1rem,3vw,3.25rem) var(--font-serif);color:#6f0c08;margin:0 0 .35rem}
+.ur-concept-card__place{font-weight:650;color:#90662d!important}
+.ur-concept-card__body p:not(.ur-eyebrow){line-height:1.75;color:#61574e;font-size:.95rem}
+.ur-concept-card__meta{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0}
+.ur-concept-card__meta span{border:1px solid #d4c5b1;padding:.45rem .7rem;color:#6f0c08;font-size:.75rem}
+.ur-concept-disclosure{background:#f3e8d7;color:#584638;padding:1.3rem 0;font-size:.85rem;line-height:1.6}
+@media(max-width:1000px){.ur-essentials__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ur-stage__layout{gap:2.5rem}}
+@media(max-width:740px){.ur-stage{padding:7rem 0 4rem}.ur-stage:before{inset:0 0 45% 0;mask-image:linear-gradient(#000,transparent)}.ur-stage__layout{grid-template-columns:1fr;gap:2rem}.ur-stage__art{min-height:0;max-width:400px;width:100%;margin:auto}.ur-stage__roundel{max-width:340px}.ur-stage__mini{left:0;bottom:.5rem}.ur-stage__copy{text-align:left}.ur-stage h1{font-size:clamp(3rem,12vw,4.3rem)}.ur-essentials__top{grid-template-columns:1fr;gap:1.2rem}.ur-essentials__grid{grid-template-columns:1fr 1fr}.ur-essentials__item{padding:1.2rem .9rem;gap:.55rem;flex-direction:column}.ur-essentials__item p{font-size:.76rem}.ur-essentials__flourish{opacity:.25}.ur-residences-grid__layout{grid-template-columns:1fr}.ur-concept-card__art{height:240px}.ur-next{padding:5rem 0}}
+@media(max-width:420px){.ur-essentials__grid{grid-template-columns:1fr}.ur-essentials__item{flex-direction:row;gap:1rem}.ur-stage__stamp{width:70px;height:70px;font-size:1.5rem}.ur-next__button{max-width:100%;text-align:center}.ur-stage__roundel{max-width:300px}}
+@media(prefers-reduced-motion:reduce){.ur-next__button{transition:none}}
