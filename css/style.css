@@ -1895,20 +1895,25 @@ p { margin-bottom: 1rem; }
  .footer__crest { width: 84px; }
 }
 
-/* UNI RESIDENTIA — approved burgundy stucco homepage wall, 22 Nov 2026.
-   Real generated wall texture, not a flattened screenshot or logos. */
+/* UNI RESIDENTIA — approved royal cloth and stone pillar backdrop, Nov 2026.
+   Artwork is decorative only: the crest, buttons and words stay HTML. */
 .hero {
     background-color: #4c0a0a;
-    background-image: url('../images/backgrounds/heritage-burgundy-wall.webp');
+    background-image: url('../images/backgrounds/royal-cloth-pillar-extended.webp');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .hero__overlay {
-    background: linear-gradient(180deg, rgba(26, 2, 6, 0.10), rgba(30, 4, 7, 0.03) 48%, rgba(24, 2, 5, 0.22));
+    background: linear-gradient(90deg, rgba(32, 0, 7, .10), rgba(32, 0, 7, .02) 25%, rgba(32, 0, 7, .02) 75%, rgba(32, 0, 7, .14));
     opacity: 1;
     pointer-events: none;
 }
+/* Phones intentionally focus on the empty burgundy centre: no decorative
+   objects can obscure text/buttons even when the aspect ratio is narrow. */
 @media (max-width: 768px) {
-    .hero { background-position: center center; }
+    .hero { background-position: 50% center; background-size: cover; }
+    .hero__overlay {
+        background: linear-gradient(180deg, rgba(27, 0, 6, .08), rgba(27, 0, 6, .12));
+    }
 }
