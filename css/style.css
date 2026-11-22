@@ -1886,7 +1886,7 @@ p { margin-bottom: 1rem; }
 
 /* Uni Residentia official heraldic logo family */
 .navbar__shield { width: 48px; height: 52px; object-fit: contain; flex-shrink: 0; }
-.hero__crest-img { width: clamp(132px, 13vw, 185px); height: auto; opacity: 1; object-fit: contain; filter: drop-shadow(0 8px 18px rgba(0,0,0,.20)); }
+.hero__crest-img { width: clamp(132px, 13vw, 185px); height: auto; opacity: 1; object-fit: contain; filter: none; }
 .footer__crest { width: 110px; height: auto; opacity: 1; object-fit: contain; }
 @media(max-width: 760px) {
  .navbar__shield { width: 39px; height: 44px; }
