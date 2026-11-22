@@ -1,151 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact UNI RESIDENTIA. Get in touch for inquiries, support, or to register interest.">
-    <title>Contact | UNI RESIDENTIA</title>
-    <link rel="icon" type="image/png" href="images/branding/favicon-32.png?v=clean20261122">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/branding/favicon-180.png?v=clean20261122">
-</head>
-<body>
-    <header class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar__logo">
-                <img src="images/branding/nav-shield.png?v=clean20261122" alt="UNI RESIDENTIA Shield" class="navbar__shield">
-                <span class="navbar__brand">UNI RESIDENTIA</span>
-            </a>
-            <nav class="navbar__nav" id="navMenu">
-                <a href="residences.html" class="navbar__link">Residences &amp; Rooms</a>
-                <a href="experience.html" class="navbar__link">The Experience</a>
-                <a href="investment.html" class="navbar__link">Investment</a>
-                <a href="about.html" class="navbar__link">About</a>
-                <a href="student-portal.html" class="navbar__link navbar__link--portal">Student Portal</a>
-                <a href="apply.html" class="btn btn--gold navbar__cta">Apply Now</a>
-            </nav>
-            <button class="navbar__toggle" id="mobileToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <p class="page-header__label">Contact</p>
-                <h1 class="page-header__title">Get in Touch</h1>
-                <p class="page-header__subtitle">We're here to answer your questions and guide you through the application process.</p>
-            </div>
-        </section>
-
-        <section class="contact section">
-            <div class="container">
-                <div class="contact__grid">
-                    <div class="contact__info">
-                        <h2>Contact Information</h2>
-                        <div class="contact__details">
-                            <div class="contact__item">
-                                <h3>Email</h3>
-                                <p>info@uniresidentia.com</p>
-                                <p>applications@uniresidentia.com</p>
-                            </div>
-                            <div class="contact__item">
-                                <h3>Phone</h3>
-                                <p>+27 12 345 6789</p>
-                                <p>Mon–Fri, 08:00–17:00</p>
-                            </div>
-                            <div class="contact__item">
-                                <h3>Visit Us</h3>
-                                <p>12 Academic Avenue</p>
-                                <p>Hatfield, Pretoria, 0028</p>
-                                <p>Viewings by appointment only.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact__form-wrapper">
-                        <form class="contact__form" id="contactForm">
-                            <h2>Send a Message</h2>
-                            <div class="form-group">
-                                <label for="contactName">Full Name</label>
-                                <input type="text" id="contactName" name="contactName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactEmail">Email Address</label>
-                                <input type="email" id="contactEmail" name="contactEmail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactSubject">Subject</label>
-                                <select id="contactSubject" name="contactSubject">
-                                    <option value="">Select a topic</option>
-                                    <option value="application">Application Inquiry</option>
-                                    <option value="viewing">Book a Viewing</option>
-                                    <option value="investment">Investment/Pricing</option>
-                                    <option value="support">Support</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="contactMessage">Message</label>
-                                <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--burgundy btn--block">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <img src="images/branding/full-crest.png?v=clean20261122" alt="UNI RESIDENTIA Crest" class="footer__crest">
-                    <p class="footer__tagline">Built for the Driven.</p>
-                    <p class="footer__est">EST. MMXXV</p>
-                </div>
-                <div class="footer__links">
-                    <h4>Residences</h4>
-                    <a href="residence-detail.html">Pretoria</a>
-                    <a href="residence-detail.html">Johannesburg</a>
-                    <a href="contact.html">Cape Town (2028)</a>
-                </div>
-                <div class="footer__links">
-                    <h4>Quick Links</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="investment.html">Investment</a>
-                    <a href="apply.html">Apply</a>
-                    <a href="faq.html">FAQ</a>
-                </div>
-                <div class="footer__links">
-                    <h4>Student</h4>
-                    <a href="student-portal.html">Student Portal</a>
-                    <a href="contact.html">Support</a>
-                </div>
-                <div class="footer__contact">
-                    <h4>Contact</h4>
-                    <p>info@uniresidentia.com</p>
-                    <p>+27 12 345 6789</p>
-                    <div class="footer__social">
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2025 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
-                <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en-ZA"><head>
+      <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="description" content="Contact Uni Residentia about student room availability, rates and viewings in Bloemfontein."><meta name="theme-color" content="#631011">
+      <title>Contact &amp; Viewings | UNI RESIDENTIA</title>
+      <link rel="icon" type="image/png" href="images/branding/favicon-32.png?v=clean20261122">
+      <link rel="apple-touch-icon" href="images/branding/favicon-180.png?v=clean20261122">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css?v=royal20261122">
+      <link rel="stylesheet" href="css/launch.css?v=live20261122">
+    </head><body><header class="navbar navbar--scrolled" id="navbar">
+      <div class="container"><a class="navbar__logo" href="index.html" aria-label="Uni Residentia home"><img class="navbar__shield" src="images/branding/nav-shield.png?v=clean20261122" alt="" width="46" height="52"><span class="navbar__brand">UNI RESIDENTIA</span></a>
+      <nav class="navbar__nav" id="navMenu" aria-label="Main navigation"><a class="navbar__link " href="index.html">Home</a><a class="navbar__link " href="residences.html">Residences</a><a class="navbar__link " href="experience.html">The Experience</a><a class="navbar__link " href="investment.html">Rooms & Rates</a><a class="navbar__link " href="about.html">About</a><a class="navbar__link " href="student-portal.html">Student Portal</a><a class="btn btn--gold navbar__cta" href="apply.html">Apply Now</a></nav>
+      <button class="navbar__toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+    </header><main><section class="ur-page-hero"><div class="container"><p class="ur-eyebrow">ENQUIRIES / VIEWINGS</p><h1>Let's talk accommodation.</h1><p>Need a current rate, room availability or a viewing? Send us your question.</p></div></section>
+<section class="ur-section ur-section--cream"><div class="container ur-form-layout"><aside class="ur-form-aside"><p class="ur-eyebrow">FIND US</p><h2>Right here in Bloem.</h2><p>Our accommodation is in Willows and Universitas, Bloemfontein, Free State.</p><p>Use the enquiry form to ask our team about applications, room options and viewings.</p><a href="residences.html" class="ur-inline-link">See the houses ↗</a></aside>
+<form id="contactForm" class="ur-form"><h2>Send an enquiry</h2><label>Full name *<input name="name" maxlength="120" autocomplete="name" required></label><label>Email *<input type="email" name="email" maxlength="250" autocomplete="email" required></label>
+<label>Enquiry type *<select name="subject" required><option value="">Choose a topic</option><option value="Room availability">Room availability</option><option value="Viewing request">Viewing request</option><option value="Rates and fees">Rates and fees</option><option value="Application support">Application support</option><option value="General question">General question</option></select></label>
+<label>Message *<textarea name="message" rows="6" minlength="10" maxlength="3500" required placeholder="Tell us what you would like to know."></textarea></label><div class="ur-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<label class="ur-check"><input type="checkbox" required><span>My information may be used to respond to this enquiry. See the <a href="privacy.html">Privacy Notice</a>.</span></label>
+<button class="btn btn--burgundy btn--block" type="submit">Send message ↗</button><p class="ur-form-status" id="contactStatus" role="status" aria-live="polite"></p>
+</form></div></section></main><footer class="footer ur-footer"><div class="container">
+      <div class="ur-footer__grid"><div><a href="index.html" class="ur-footer__brand"><img src="images/branding/full-crest.png?v=clean20261122" alt="" width="94" height="94"><span>UNI RESIDENTIA<small>Built for the Driven.</small></span></a><p>Student accommodation in Bloemfontein, Free State.</p><div class="ur-footer__badges"><span>CIPC-registered</span><span>UFS-accredited</span></div></div>
+      <div><h4>Residences</h4><a href="residence-detail.html#willows">Willows House</a><a href="residence-detail.html#universitas">Universitas House</a><a href="investment.html">Rooms & Rates</a></div>
+      <div><h4>Explore</h4><a href="experience.html">Student life</a><a href="faq.html">Questions</a><a href="apply.html">Apply online</a><a href="student-portal.html">Student Portal</a></div>
+      <div><h4>Get in touch</h4><p>Bloemfontein, Free State, South Africa</p><a href="contact.html">Contact our team</a><a href="contact.html#contactForm">Request a viewing</a></div></div>
+      <div class="ur-footer__bottom"><span>© 2026 UNI RESIDENTIA</span><span>Gallery images are illustrative. Room finishes and facilities may vary by property.</span><div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+      </div></footer><script src="js/launch.js?v=live20261122" defer></script></body></html>

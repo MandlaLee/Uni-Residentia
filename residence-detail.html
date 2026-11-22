@@ -1,183 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pretoria Residence - UNI RESIDENTIA's flagship premium student accommodation in Hatfield.">
-    <title>Pretoria Residence | UNI RESIDENTIA</title>
-    <link rel="icon" type="image/png" href="images/branding/favicon-32.png?v=clean20261122">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/branding/favicon-180.png?v=clean20261122">
-</head>
-<body>
-    <header class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html" class="navbar__logo">
-                <img src="images/branding/nav-shield.png?v=clean20261122" alt="UNI RESIDENTIA Shield" class="navbar__shield">
-                <span class="navbar__brand">UNI RESIDENTIA</span>
-            </a>
-            <nav class="navbar__nav" id="navMenu">
-                <a href="residences.html" class="navbar__link navbar__link--active">Residences &amp; Rooms</a>
-                <a href="experience.html" class="navbar__link">The Experience</a>
-                <a href="investment.html" class="navbar__link">Investment</a>
-                <a href="about.html" class="navbar__link">About</a>
-                <a href="student-portal.html" class="navbar__link navbar__link--portal">Student Portal</a>
-                <a href="apply.html" class="btn btn--gold navbar__cta">Apply Now</a>
-            </nav>
-            <button class="navbar__toggle" id="mobileToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <!-- Residence Hero -->
-        <section class="residence-hero">
-            <div class="residence-hero__image">
-                <img src="images/photos/residence-1.jpg" alt="Pretoria Residence">
-            </div>
-            <div class="container residence-hero__content">
-                <span class="residence-hero__badge">Flagship Residence</span>
-                <h1>Pretoria Residence</h1>
-                <p>12 Academic Avenue, Hatfield, Pretoria</p>
-                <a href="apply.html" class="btn btn--burgundy btn--lg">Apply for This Residence</a>
-            </div>
-        </section>
-
-        <!-- Residence Info -->
-        <section class="residence-info section">
-            <div class="container">
-                <div class="residence-info__grid">
-                    <div class="residence-info__main">
-                        <h2>About This Residence</h2>
-                        <p>The Pretoria Residence is our first and flagship property, setting the benchmark for what premium student accommodation should be. Located in the heart of Hatfield, it places you within a three-minute walk of the University of Pretoria's main campus gates.</p>
-                        <p>Housed in a beautifully restored heritage building with a modern extension, the residence combines timeless architecture with contemporary comfort. Every detail has been considered—from the acoustic insulation in study areas to the ergonomic furniture in every room.</p>
-                        <p>With only 45 rooms across three room types, this is an intimate community of serious students who value their environment as much as their education.</p>
-
-                        <h3>Amenities</h3>
-                        <ul class="residence-info__amenities">
-                            <li>Rooftop study lounge with city views</li>
-                            <li>Ground-floor library and silent zone</li>
-                            <li>Collaborative group-work rooms</li>
-                            <li>Fully equipped communal kitchen</li>
-                            <li>Laundry facilities</li>
-                            <li>Secure bicycle storage</li>
-                            <li>Courtyard garden</li>
-                            <li>Biometric access control</li>
-                            <li>24/7 CCTV monitoring</li>
-                            <li>On-site residence manager</li>
-                        </ul>
-                    </div>
-                    <aside class="residence-info__sidebar">
-                        <div class="residence-info__card">
-                            <h3>Quick Facts</h3>
-                            <ul>
-                                <li><strong>Rooms:</strong> 45</li>
-                                <li><strong>Floors:</strong> 4</li>
-                                <li><strong>Room Types:</strong> Single, Shared, Premium Suite</li>
-                                <li><strong>Nearest Campus:</strong> UP Main (3 min walk)</li>
-                                <li><strong>Transport:</strong> Hatfield Gautrain (8 min walk)</li>
-                                <li><strong>Security:</strong> Biometric + CCTV + Guard</li>
-                                <li><strong>Availability:</strong> Limited for 2027</li>
-                            </ul>
-                            <a href="apply.html" class="btn btn--burgundy btn--block">Apply Now</a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <!-- Available Rooms -->
-        <section class="available-rooms section section--light">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Available Rooms</h2>
-                </div>
-                <div class="available-rooms__grid">
-                    <div class="room-card">
-                        <div class="room-card__image">
-                            <img src="images/photos/room-single.jpg" alt="Single Room">
-                        </div>
-                        <div class="room-card__body">
-                            <h3>Single Room</h3>
-                            <p>Private bedroom with study desk, built-in storage, and shared bathroom. Ideal for focused independent living.</p>
-                            <a href="investment.html" class="btn btn--outline btn--sm">View Pricing</a>
-                        </div>
-                    </div>
-                    <div class="room-card">
-                        <div class="room-card__image">
-                            <img src="images/photos/room-shared.jpg" alt="Shared Room">
-                        </div>
-                        <div class="room-card__body">
-                            <h3>Shared Room</h3>
-                            <p>Semi-private layout with two dedicated study zones and a shared bathroom. A balanced option.</p>
-                            <a href="investment.html" class="btn btn--outline btn--sm">View Pricing</a>
-                        </div>
-                    </div>
-                    <div class="room-card">
-                        <div class="room-card__image">
-                            <img src="images/photos/room-premium.jpg" alt="Premium Suite">
-                        </div>
-                        <div class="room-card__body">
-                            <h3>Premium Suite</h3>
-                            <p>Private bedroom, lounge area, en-suite bathroom, and kitchenette. The ultimate student residence experience.</p>
-                            <a href="investment.html" class="btn btn--outline btn--sm">View Pricing</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <img src="images/branding/full-crest.png?v=clean20261122" alt="UNI RESIDENTIA Crest" class="footer__crest">
-                    <p class="footer__tagline">Built for the Driven.</p>
-                    <p class="footer__est">EST. MMXXV</p>
-                </div>
-                <div class="footer__links">
-                    <h4>Residences</h4>
-                    <a href="residence-detail.html">Pretoria</a>
-                    <a href="residence-detail.html">Johannesburg</a>
-                    <a href="contact.html">Cape Town (2028)</a>
-                </div>
-                <div class="footer__links">
-                    <h4>Quick Links</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="investment.html">Investment</a>
-                    <a href="apply.html">Apply</a>
-                    <a href="faq.html">FAQ</a>
-                </div>
-                <div class="footer__links">
-                    <h4>Student</h4>
-                    <a href="student-portal.html">Student Portal</a>
-                    <a href="contact.html">Support</a>
-                </div>
-                <div class="footer__contact">
-                    <h4>Contact</h4>
-                    <p>info@uniresidentia.com</p>
-                    <p>+27 12 345 6789</p>
-                    <div class="footer__social">
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2025 UNI RESIDENTIA. All rights reserved. Excellence Begins at Home.</p>
-                <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en-ZA"><head>
+      <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="description" content="Room options, facilities and enquiries for Willows House and Universitas House."><meta name="theme-color" content="#631011">
+      <title>Willows &amp; Universitas Houses | UNI RESIDENTIA</title>
+      <link rel="icon" type="image/png" href="images/branding/favicon-32.png?v=clean20261122">
+      <link rel="apple-touch-icon" href="images/branding/favicon-180.png?v=clean20261122">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css?v=royal20261122">
+      <link rel="stylesheet" href="css/launch.css?v=live20261122">
+    </head><body><header class="navbar navbar--scrolled" id="navbar">
+      <div class="container"><a class="navbar__logo" href="index.html" aria-label="Uni Residentia home"><img class="navbar__shield" src="images/branding/nav-shield.png?v=clean20261122" alt="" width="46" height="52"><span class="navbar__brand">UNI RESIDENTIA</span></a>
+      <nav class="navbar__nav" id="navMenu" aria-label="Main navigation"><a class="navbar__link " href="index.html">Home</a><a class="navbar__link navbar__link--active" href="residences.html">Residences</a><a class="navbar__link " href="experience.html">The Experience</a><a class="navbar__link " href="investment.html">Rooms & Rates</a><a class="navbar__link " href="about.html">About</a><a class="navbar__link " href="student-portal.html">Student Portal</a><a class="btn btn--gold navbar__cta" href="apply.html">Apply Now</a></nav>
+      <button class="navbar__toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><span></span><span></span><span></span></button></div>
+    </header><main><section class="ur-page-hero"><div class="container"><p class="ur-eyebrow">OUR PROPERTIES</p><h1>The houses of Uni Residentia.</h1><p>See the accommodation settings in Willows and Universitas, and choose your room preference.</p></div></section>
+<section class="ur-section" id="willows"><div class="container"><div class="ur-house-detail"><img class="" src="images/rooms/willows-exterior.webp" alt="Willows House exterior" loading="lazy" decoding="async" width="1376" height="768"><div><p class="ur-eyebrow">WILLOWS, BLOEMFONTEIN</p><h2>Willows House</h2><p>Double-storey student housing with familiar brick architecture and welcoming shared spaces. Ask our team about current room openings.</p><ul><li>Single and sharing-room enquiries</li><li>Shared kitchen and study-space information</li><li>Viewing arrangements on request</li></ul><a class="btn btn--burgundy" href="apply.html?residence=willows">Apply for Willows House</a></div></div></div></section>
+<section class="ur-section ur-section--cream" id="universitas"><div class="container"><div class="ur-house-detail ur-house-detail--flip"><img class="" src="images/rooms/universitas-exterior.webp" alt="Universitas House exterior" loading="lazy" decoding="async" width="1376" height="768"><div><p class="ur-eyebrow">UNIVERSITAS, BLOEMFONTEIN</p><h2>Universitas House</h2><p>A single-storey, residential-style option for students who prefer a smaller-scale setting. Ask about room availability and shared facilities.</p><ul><li>Single and sharing-room enquiries</li><li>Practical residential layout</li><li>Viewing arrangements on request</li></ul><a class="btn btn--burgundy" href="apply.html?residence=universitas">Apply for Universitas House</a></div></div></div></section>
+<section class="ur-section"><div class="container"><div class="ur-section-head"><p class="ur-eyebrow">ROOM TYPES</p><h2>Choose the room that feels right.</h2></div><div class="ur-two-grid"><article class="ur-room-card"><img class="" src="images/rooms/single-bedroom.webp" alt="Single Room student room" loading="lazy" decoding="async" width="1376" height="768">
+      <div class="ur-room-card__body"><h3>Single Room</h3><p>A room of your own with everyday essentials.</p><a href="apply.html?room=single" class="ur-inline-link">Apply for this room ↗</a></div></article><article class="ur-room-card"><img class="" src="images/rooms/sharing-bedroom.webp" alt="Sharing Room student room" loading="lazy" decoding="async" width="1376" height="768">
+      <div class="ur-room-card__body"><h3>Sharing Room</h3><p>Shared accommodation for students who want to keep costs manageable.</p><a href="apply.html?room=sharing" class="ur-inline-link">Apply for this room ↗</a></div></article></div></div></section></main><footer class="footer ur-footer"><div class="container">
+      <div class="ur-footer__grid"><div><a href="index.html" class="ur-footer__brand"><img src="images/branding/full-crest.png?v=clean20261122" alt="" width="94" height="94"><span>UNI RESIDENTIA<small>Built for the Driven.</small></span></a><p>Student accommodation in Bloemfontein, Free State.</p><div class="ur-footer__badges"><span>CIPC-registered</span><span>UFS-accredited</span></div></div>
+      <div><h4>Residences</h4><a href="residence-detail.html#willows">Willows House</a><a href="residence-detail.html#universitas">Universitas House</a><a href="investment.html">Rooms & Rates</a></div>
+      <div><h4>Explore</h4><a href="experience.html">Student life</a><a href="faq.html">Questions</a><a href="apply.html">Apply online</a><a href="student-portal.html">Student Portal</a></div>
+      <div><h4>Get in touch</h4><p>Bloemfontein, Free State, South Africa</p><a href="contact.html">Contact our team</a><a href="contact.html#contactForm">Request a viewing</a></div></div>
+      <div class="ur-footer__bottom"><span>© 2026 UNI RESIDENTIA</span><span>Gallery images are illustrative. Room finishes and facilities may vary by property.</span><div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+      </div></footer><script src="js/launch.js?v=live20261122" defer></script></body></html>
