@@ -387,3 +387,159 @@ body{background:var(--ur-cream);color:var(--ur-ink);overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){
  .ur-showcase__image,.ur-viewing__button{transition:none}
 }
+
+/* UNI RESIDENTIA — app-aligned minimal brand system, 24 November 2026.
+   Exact shield/crest assets are shared with the native app. */
+:root{
+  --ur-red:#66101c;--ur-red-dark:#34141b;--ur-gold:#ba9152;
+  --ur-cream:#fcf9f2;--ur-sand:#f3eee7;--ur-ink:#282327;
+  --color-burgundy:#66101c;--color-burgundy-dark:#34141b;
+  --color-gold:#ba9152;--color-ivory:#fcf9f2;
+  --font-serif:Georgia,'Times New Roman',serif;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif
+}
+body{background:var(--ur-cream);font-family:var(--font-sans);color:var(--ur-ink)}
+h1,h2,h3,h4,.navbar__brand,.ur-footer__brand{font-family:var(--font-serif)}
+.navbar,.navbar.navbar--scrolled{
+  background:rgba(252,249,242,.98);box-shadow:none;border-bottom:1px solid #e9e0d5;
+  padding:.45rem 0
+}
+.navbar .container{max-width:1240px}
+.navbar__logo{gap:11px;flex-shrink:0}
+.navbar__brand,.navbar--scrolled .navbar__brand{font:700 clamp(1.06rem,1.8vw,1.3rem)/1 var(--font-serif);letter-spacing:.13em;color:#611c29}
+.navbar__shield{width:39px!important;height:46px!important;object-fit:contain}
+.navbar__nav.ur-main-nav{gap:clamp(.7rem,1.9vw,1.8rem);align-items:center}
+.navbar__nav .navbar__link{font-size:.84rem;font-weight:600;letter-spacing:0;text-transform:none;color:#5a4b48;padding:11px 2px}
+.navbar__nav .navbar__link[aria-current="page"]{color:#651c29;border-bottom:2px solid #ba9152}
+.navbar__cta{font-size:.83rem!important;background:#66101c!important;border:1px solid #66101c!important;border-radius:9px;padding:.72rem 1.35rem!important;box-shadow:none}
+.navbar__cta:hover{background:#80293a!important}
+.btn,.ur-viewing__button,.ur-showcase__link{border-radius:9px;box-shadow:none;letter-spacing:0;font-family:var(--font-sans);font-weight:700}
+.btn--burgundy{background:#66101c;border-color:#66101c;color:#fff}
+.btn--burgundy:hover{background:#84283a;border-color:#84283a}
+.btn--gold{background:#ba9152;border-color:#ba9152;color:#fff}
+.btn--outline{border-color:#ab8a79;color:#631d2b;background:transparent}
+.ur-inline-link{color:#701d2e;border-bottom:1px solid #c5a978;gap:0}
+.ur-inline-link:hover{color:#8f3e4a}
+.ur-home-hero{
+  min-height:650px!important;padding:110px 0 84px!important;
+  background:#fcf9f2!important;background-image:none!important
+}
+.ur-home-hero .hero__overlay,.ur-home-hero:before{display:none!important}
+.ur-home-hero .hero__content{max-width:1020px!important;padding:2rem!important}
+.ur-home-hero .hero__crest{margin:0 auto 1.5rem}
+.ur-home-hero .hero__crest-img{width:116px!important;max-width:116px!important;height:auto!important;filter:none}
+.ur-home-hero .hero__title{
+  color:#66101c!important;text-shadow:none!important;
+  font:700 clamp(2.7rem,5.5vw,5.25rem)/1.1 var(--font-serif)!important;
+  max-width:880px!important;letter-spacing:-.035em;margin:0 auto 1.2rem!important
+}
+.ur-home-hero .hero__subtitle{
+  color:#716462!important;text-shadow:none!important;
+  font-size:clamp(.98rem,1.5vw,1.12rem)!important;line-height:1.7!important;
+  margin:0 auto 2rem!important;max-width:560px
+}
+.ur-home-hero .hero__actions{gap:.8rem}
+.ur-home-hero .hero__actions .btn--gold{background:#66101c!important;color:#fff!important;border-color:#66101c!important}
+.ur-home-hero .hero__actions .btn--outline{background:transparent!important;color:#66101c!important;border-color:#c8b2aa!important}
+.ur-home-hero .hero__actions .btn{min-height:49px;padding:.88rem 1.35rem;font-size:.9rem}
+.ur-section{padding:clamp(3.7rem,6.3vw,5.5rem) 0}
+.ur-section-head{margin-bottom:2.4rem;max-width:900px}
+.ur-section-head h2,.ur-cta h2,.ur-house-detail h2,.ur-split-intro h2,.ur-form-aside h2,.ur-rate-panel h2{
+  color:#66101c;font:700 clamp(2.1rem,3.6vw,3.4rem)/1.16 var(--font-serif);letter-spacing:-.028em
+}
+.ur-property-card,.ur-room-card,.ur-gallery-card,.ur-choice-card,.ur-form,.ur-guide-grid article{
+  background:#fffdf9;border:1px solid #e7ded3;border-radius:12px;box-shadow:0 5px 24px rgba(46,25,20,.04)
+}
+.ur-property-card,.ur-room-card{overflow:hidden}
+.ur-property-body,.ur-room-card__body{padding:1.55rem}
+.ur-property-body h3,.ur-room-card h3{font:700 clamp(1.55rem,2vw,2.15rem)/1.2 var(--font-serif);color:#61202c;margin:0 0 .75rem}
+.ur-property-top{display:none}
+.ur-property-photo img,.ur-room-card>img{height:265px;object-fit:cover}
+.ur-property-photo:hover img{transform:none}
+.ur-property-body p,.ur-room-card p{line-height:1.6;font-size:.93rem}
+.ur-property-body a,.ur-room-card__body a{font-size:.84rem}
+.ur-page-hero{
+  background:#f5f0e8!important;border-bottom:1px solid #e6dbce;
+  padding:clamp(8.5rem,11vw,10rem) 0 3.8rem!important
+}
+.ur-page-hero h1{color:#66101c;font:700 clamp(2.7rem,4.8vw,4.65rem)/1.13 var(--font-serif);letter-spacing:-.035em}
+.ur-page-hero p:not(.ur-eyebrow){color:#756764;line-height:1.65}
+.ur-gallery-card h3,.ur-form h2,.ur-guide-grid article h2,.ur-legal h2{color:#66101c;font-family:var(--font-serif)}
+.ur-form{padding:2rem;border-radius:13px}
+.ur-form-aside h2{font-size:clamp(2rem,3vw,3.2rem)}
+.ur-form-aside p{max-width:400px;line-height:1.75}
+.ur-form input:not([type=checkbox]),.ur-form select,.ur-form textarea{
+  min-height:50px;border:1px solid #d7ccc1;border-radius:9px;
+  background:#fff;color:#3a2d30;padding:.77rem .95rem
+}
+.ur-form input:focus,.ur-form select:focus,.ur-form textarea:focus{
+  outline:2px solid rgba(186,145,82,.28);border-color:#ba9152
+}
+.ur-form label{font-size:.83rem;color:#594745}
+.ur-form .btn[type="submit"]{min-height:52px}
+.ur-section--cream{background:#fcf9f2}
+.ur-included{background:#fffdf9}
+.ur-included__header{text-align:center;margin-bottom:2rem}
+.ur-included__header h2{font:700 clamp(2.2rem,3.5vw,3.35rem)/1.13 var(--font-serif);letter-spacing:-.03em;color:#66101c}
+.ur-included__item{border-radius:10px}
+.ur-included__item h3{font-size:1rem;font-family:var(--font-sans);font-weight:700;color:#51303a}
+.ur-included__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.ur-included__note{margin-top:1.3rem;font-size:.8rem;color:#796e69}
+.ur-showcase{background:#fcf9f2}
+.ur-showcase__intro h2{font:700 clamp(2.2rem,3.7vw,3.5rem)/1.15 var(--font-serif);letter-spacing:-.03em;color:#66101c}
+.ur-showcase__tab{border-radius:9px}
+.ur-showcase__panel{border-radius:13px;overflow:hidden}
+.ur-showcase__copy h3{font-family:var(--font-serif);color:#66101c}
+.ur-showcase__description{line-height:1.65;color:#736a68}
+.ur-showcase__link{background:transparent;color:#691c2c}
+.ur-viewing{background:#3c151d}
+.ur-viewing__content h2{font:700 clamp(2.3rem,4vw,3.75rem)/1.15 var(--font-serif)}
+.ur-viewing__button{background:#66101c;color:#fff;border:1px solid #ba9152}
+.ur-footer{background:#34141b!important;color:#f0e6df}
+.ur-footer .container{max-width:1240px}
+.ur-footer__grid{grid-template-columns:1.75fr 1fr 1fr 1fr;gap:clamp(1.3rem,3vw,3rem);padding:3.2rem 0}
+.ur-footer__brand{color:#f9e4c7!important;font:700 1.12rem/1.2 var(--font-serif);letter-spacing:.12em;gap:.65rem}
+.ur-footer__brand img{width:52px;height:61px;object-fit:contain}
+.ur-footer__identity p{margin-top:.75rem!important;color:#d5c7c0!important}
+.ur-footer h4{font:700 .83rem var(--font-sans);letter-spacing:.015em;color:#f3dcc0;margin-bottom:.7rem}
+.ur-footer .ur-footer__grid a:not(.ur-footer__brand){font-size:.81rem;color:#e4d9d4;line-height:2.05}
+.ur-footer__bottom{border-top:1px solid rgba(235,210,196,.17);padding:1.4rem 0;color:#c9b6b0;font-size:.71rem}
+.ur-footer__bottom a{color:#e4d9d4}
+@media(max-width:1050px){
+  .ur-footer__grid{grid-template-columns:1.25fr 1fr 1fr 1fr;gap:1.3rem}
+  .navbar__nav.ur-main-nav{gap:1rem}
+}
+@media(max-width:850px){
+  .navbar__nav.ur-main-nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:#fcf9f2;padding:1rem 1.45rem 1.6rem;border-bottom:1px solid #e6d7c8;box-shadow:0 14px 25px rgba(55,23,22,.07)}
+  .navbar__nav.ur-main-nav.is-open{display:flex}
+  .navbar__nav .navbar__link{padding:.8rem .3rem!important;font-size:.96rem!important}
+  .navbar__nav .navbar__link[aria-current="page"]{border-bottom:0;color:#66101c}
+  .ur-footer__grid{grid-template-columns:repeat(2,1fr)}
+  .ur-included__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:540px){
+  .ur-home-hero{min-height:600px!important;padding:100px 0 60px!important}
+  .ur-home-hero .hero__content{padding:1rem!important}
+  .ur-home-hero .hero__title{font-size:clamp(2.5rem,9.2vw,3.2rem)!important}
+  .ur-home-hero .hero__crest-img{width:94px!important;max-width:94px!important}
+  .ur-home-hero .hero__actions{gap:.75rem}
+  .ur-home-hero .hero__actions .btn{width:100%;max-width:330px}
+  .ur-property-photo img,.ur-room-card>img{height:225px}
+  .ur-included__grid{grid-template-columns:1fr}
+  .ur-footer__grid{grid-template-columns:1fr;gap:1.8rem}
+  .ur-page-hero{padding:8rem 0 3rem!important}
+  .ur-form{padding:1.4rem}
+}
+
+/* Flat amenity treatment, consistent with the app's quiet iconography. */
+.ur-included,.ur-included__header,.ur-included__item{background:#fffdf9!important;background-image:none!important}
+.ur-included__item{box-shadow:none!important;border:1px solid #e9dfd5!important;padding:1.05rem 1.15rem}
+.ur-included__icon{background:#f3ede5!important;color:#69202e!important;box-shadow:none!important;border:0!important}
+.ur-included__icon svg{stroke:#69202e!important}
+.ur-included__item::before,.ur-included__item::after{display:none!important}
+
+/* Application page: a single focused form, aligned with the app. */
+.ur-form-layout{display:block;max-width:840px;margin-inline:auto}
+.ur-form-layout .ur-form{max-width:840px;margin:0 auto;padding:clamp(1.3rem,3.8vw,2.8rem)}
+.ur-form-layout .ur-form h2{font-size:clamp(1.75rem,2.5vw,2.3rem);margin-bottom:.4rem}
+.ur-form-layout .ur-form>p{margin-top:0;margin-bottom:1.5rem}

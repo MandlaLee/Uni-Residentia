@@ -63,26 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setStatus(state,error?.message || "Couldn't submit your application. Please retry.");
     }finally{btn.disabled=false;}
   });
-  // Accessible dropdown navigation: desktop and mobile.
-  const groups=[...document.querySelectorAll("[data-ur-dropdown]")];
-  const dismissDropdowns=(except=null)=>groups.forEach(group=>{
-    if(group===except)return;
-    group.classList.remove("is-open");
-    const button=group.querySelector("[data-ur-toggle]");
-    if(button)button.setAttribute("aria-expanded","false");
-  });
-  groups.forEach(group=>{
-    const btn=group.querySelector("[data-ur-toggle]");
-    if(!btn)return;
-    btn.addEventListener("click",e=>{
-      e.stopPropagation();
-      const shouldOpen=!group.classList.contains("is-open");
-      dismissDropdowns();group.classList.toggle("is-open",shouldOpen);
-      btn.setAttribute("aria-expanded",String(shouldOpen));
-    });
-  });
-  document.addEventListener("click",e=>{if(!e.target.closest("[data-ur-dropdown]"))dismissDropdowns();});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")dismissDropdowns();});
   const contact=$("#contactForm");
   if(contact){
     const topic=params.get("topic");
@@ -124,37 +104,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector("[data-ur-showcase]");
   if (!root) return;
   const slides = [
-    { key:"private", eyebrow:"YOUR OWN SPACE", heading:"Private Bedroom", tagline:"A calm place to recharge",
-      description:"Discover private-bedroom options with comfortable furnishings and space to study, rest and make your room feel like home.",
-      images:["single-bedroom","study-room","living-room"], tags:["Private space","Study ready","Everyday comfort"], link:"investment.html" },
-    { key:"social", eyebrow:"MAKE ROOM FOR FRIENDS", heading:"Social Spaces", tagline:"Life together",
-      description:"Relax after lectures, catch up with friends and enjoy shared moments in welcoming lounges and social areas.",
-      images:["living-room","dining-room","courtyard"], tags:["Shared lounge","Relax & unwind","Make connections"], link:"experience.html" },
-    { key:"study", eyebrow:"SPACE TO FOCUS", heading:"Study Spaces", tagline:"Make every hour count",
-      description:"Settle into a study-friendly space for coursework, exam preparation and the quiet time your goals deserve.",
-      images:["study-room","single-bedroom","reception"], tags:["Focus time","Study areas","Daily routines"], link:"experience.html" },
-    { key:"sharing", eyebrow:"YOUR PEOPLE, YOUR PLACE", heading:"Sharing Rooms", tagline:"Better together",
-      description:"Sharing rooms offer a practical student-living option with a place for your essentials and a study routine of your own.",
-      images:["sharing-bedroom","dining-room","living-room"], tags:["Shared rooms","Student living","Practical comfort"], link:"investment.html" },
-    { key:"gym", eyebrow:"FIND YOUR BALANCE", heading:"Gym & Fitness", tagline:"Move your way",
-      description:"Give yourself a break from the books and discover fitness and recreation spaces within our accommodation experience.",
-      images:["fitness-room","courtyard","gaming-room"], tags:["Keep active","Recharge","Room to move"], link:"experience.html" },
-    { key:"community", eyebrow:"LIVE THE MOMENTS", heading:"Community & Events", tagline:"Belong here",
-      description:"Great student memories happen outside the lecture hall. Find common areas where everyday conversations can become friendships.",
-      images:["courtyard","gaming-room","dining-room"], tags:["Community spaces","Downtime","New friendships"], link:"experience.html" },
-    { key:"team", eyebrow:"STUDENT SUPPORT", heading:"On-Site Team", tagline:"Here to help",
-      description:"Need guidance about your room, shared facilities or day-to-day arrangements? Our team is your starting point for assistance.",
-      images:["reception","gate-entrance","corridor"], tags:["Ask questions","Resident support","Get in touch"], link:"contact.html" },
+    {key:"private",heading:"Single rooms",description:"Private bedrooms for study and rest.",images:["single-bedroom","study-room","living-room"],link:"investment.html"},
+    {key:"social",heading:"Social spaces",description:"Shared lounges and places to unwind.",images:["living-room","dining-room","courtyard"],link:"experience.html"},
+    {key:"study",heading:"Study spaces",description:"Areas for focused work and revision.",images:["study-room","single-bedroom","reception"],link:"experience.html"},
+    {key:"sharing",heading:"Sharing rooms",description:"Practical shared accommodation.",images:["sharing-bedroom","dining-room","living-room"],link:"investment.html"},
+    {key:"gym",heading:"Fitness",description:"Ask about recreation facilities at your chosen residence.",images:["fitness-room","courtyard","gaming-room"],link:"experience.html"},
+    {key:"community",heading:"Community",description:"Everyday spaces to connect with other residents.",images:["courtyard","gaming-room","dining-room"],link:"experience.html"},
+    {key:"team",heading:"Support",description:"Contact the team about your accommodation.",images:["reception","gate-entrance","corridor"],link:"contact.html"},
   ];
   const tabs = Array.from(root.querySelectorAll('[role="tab"][data-ur-slide]'));
   const heading = root.querySelector("[data-ur-heading]");
-  const eyebrow = root.querySelector("[data-ur-eyebrow]");
-  const tagline = root.querySelector("[data-ur-tagline]");
   const description = root.querySelector("[data-ur-description]");
   const visual = root.querySelector("[data-ur-visual]");
   const panel = root.querySelector('[role="tabpanel"]');
   const link = root.querySelector(".ur-showcase__link");
-  const tagNodes = Array.from(root.querySelectorAll(".ur-showcase__icons span"));
   const images = ["main", "top", "bottom"].map(position => root.querySelector('[data-ur-image="' + position + '"]'));
   if (tabs.length !== slides.length || images.some(item => !item)) return;
   let active = 0, isVisible = false, timer = null, updateTimer = null;
@@ -177,11 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!reduceMotion) visual.classList.add("is-switching");
     const write = () => {
       heading.textContent = slide.heading;
-      eyebrow.textContent = slide.eyebrow;
-      tagline.textContent = slide.tagline;
       description.textContent = slide.description;
       link.href = slide.link;
-      tagNodes.forEach((node,i) => {if (slide.tags[i]) node.textContent = slide.tags[i];});
       images.forEach((element,i) => {
         element.src = "images/rooms/" + slide.images[i] + ".webp";
         element.alt = slide.heading + " — " + (i === 0 ? "main room image" : i === 1 ? "additional student space" : "shared student facility");
